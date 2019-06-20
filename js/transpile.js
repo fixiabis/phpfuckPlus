@@ -131,7 +131,7 @@ var fuckify = {
             /* } else if (fuckify.strMap[s.toLowerCase()]) {
                 return fuckify.strMap[s.toLowerCase()] + "[_$$]()"; */
             } else if (!s.match(/\d/)) {
-                return "__(" + fuckify.num(s.charCodeAt()) + ")";
+                return "$_(" + fuckify.num(s.charCodeAt()) + ")";
             } else {
                 return "(" + fuckify.num(s) + ")"
             }
@@ -171,7 +171,7 @@ $$_(fuckify.strMap)(function ($) {
 });
 
 $$_([
-	["chr", "$_"],
+    ["chr", "$_"],
     ["eval", "__"]
 ])(function ($) {
     fuckify.replMap[$[0]] = $[1]
