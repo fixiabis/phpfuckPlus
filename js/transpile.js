@@ -102,6 +102,7 @@ function transpile(script) {
 var fuckify = {
     replMap: {},
     primMap: {
+	    	"gettype": "${$_}",
 		"NULL": "${$_}(@$___)",
 		"object": "${$_}($__)",
 		"integer": "${$_}(+![])",
@@ -122,6 +123,7 @@ var fuckify = {
 			"array",
 			"boolean",
 			"double",
+			"gettype",
 			"."
         ].join("|"), "g"));
 
@@ -171,6 +173,7 @@ $$_(fuckify.strMap)(function ($) {
 });
 
 $$_([
+    ["gettype", "${$_}"],
     ["chr", "$_"],
     ["eval", "__"]
 ])(function ($) {
